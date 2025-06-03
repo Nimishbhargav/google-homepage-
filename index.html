@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Custom Galaxy Google</title>
+
+  <!-- PWA manifest -->
+  <link rel="manifest" href="manifest.webmanifest" />
+  <meta name="theme-color" content="#00ffff" />
+
+  <link rel="stylesheet" href="google.css" />
+</head>
+
+<body>
+  <div id="galaxy-background">
+    <!-- Animated planets -->
+    <div class="planet planet1"></div>
+    <div class="planet planet2"></div>
+    <div class="planet planet3"></div>
+  </div>
+  <div id="star-orbits">
+    <!-- stars will be added here dynamically -->
+  </div>
+
+
+  <main>
+    <h1 id="typewriter"></h1>
+
+    <!-- Search form with mic -->
+    <form id="search-form" action="https://www.google.com/search" method="GET" autocomplete="off">
+      <div class="search-container">
+        <input type="text" name="q" id="search-input" placeholder="Search Google..." autocomplete="off"
+          spellcheck="false" />
+        <button type="button" id="mic-btn" title="Click to speak">🎤</button>
+      </div>
+    </form>
+
+    <!-- Custom shortcuts -->
+    <section id="shortcuts">
+      <a href="https://github.com" target="_blank" rel="noopener" class="shortcut github" title="GitHub">
+        <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" />
+        <span>GitHub</span>
+      </a>
+      <a href="https://mail.google.com" target="_blank" rel="noopener" class="shortcut gmail" title="Gmail">
+        <img src="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico" alt="Gmail" />
+        <span>Gmail</span>
+      </a>
+      <a href="https://vercel.com" target="_blank" rel="noopener" class="shortcut vercel" title="Vercel">
+        <img src="https://assets.vercel.com/image/upload/front/favicon/vercel/180x180.png" alt="Vercel" />
+        <span>Vercel</span>
+      </a>
+    </section>
+
+    <!-- Dark mode toggle -->
+    <button id="dark-mode-toggle" title="Toggle Dark Mode">🌙</button>
+  </main>
+
+  <script src="google.js"></script>
+</body>
+
+</html>

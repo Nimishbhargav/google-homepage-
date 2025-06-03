@@ -1,0 +1,269 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  height: 100vh;
+  background: radial-gradient(circle at center, #000010, #000000);
+  overflow: hidden;
+  color: #00ffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: background-color 0.5s, color 0.5s;
+  user-select: none;
+}
+
+/* Galaxy background container */
+#galaxy-background {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: url('https://cdn.pixabay.com/photo/2016/11/29/03/53/atom-1869716_1280.png') center/contain no-repeat,
+              radial-gradient(circle, #001020 0%, #000000 80%);
+  animation: backgroundGlow 10s ease-in-out infinite alternate;
+}
+
+/* Animated planets */
+.planet {
+  position: absolute;
+  border-radius: 50%;
+  box-shadow: 0 0 15px 5px #00ffff88;
+  animation-timing-function: linear;
+}
+
+.planet1 {
+  width: 50px;
+  height: 50px;
+  background: #00ffff;
+  top: 20%;
+  left: 10%;
+  animation: orbit1 20s linear infinite;
+}
+
+.planet2 {
+  width: 30px;
+  height: 30px;
+  background: #ff4081;
+  top: 50%;
+  left: 40%;
+  animation: orbit2 30s linear infinite;
+}
+
+.planet3 {
+  width: 40px;
+  height: 40px;
+  background: #ffbf00;
+  top: 70%;
+  left: 80%;
+  animation: orbit3 25s linear infinite;
+}
+
+@keyframes orbit1 {
+  0%   { transform: rotate(0deg) translateX(80px) rotate(0deg); }
+  100% { transform: rotate(360deg) translateX(80px) rotate(-360deg); }
+}
+@keyframes orbit2 {
+  0%   { transform: rotate(0deg) translateX(120px) rotate(0deg); }
+  100% { transform: rotate(360deg) translateX(120px) rotate(-360deg); }
+}
+@keyframes orbit3 {
+  0%   { transform: rotate(0deg) translateX(100px) rotate(0deg); }
+  100% { transform: rotate(360deg) translateX(100px) rotate(-360deg); }
+}
+
+@keyframes backgroundGlow {
+  0% { filter: brightness(0.85); }
+  100% { filter: brightness(1.15); }
+}
+
+/* Main container */
+main {
+  text-align: center;
+  width: 90%;
+  max-width: 600px;
+}
+
+/* Typewriter effect */
+#typewriter {
+  font-size: 2.5rem;
+  font-weight: 600;
+  min-height: 3rem;
+  margin-bottom: 30px;
+  color: #00ffff;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/* Search form */
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+#search-input {
+  width: 60%;
+  max-width: 500px;
+  padding: 12px 20px;
+  font-size: 1.2rem;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  box-shadow: 0 0 15px #00ffff88;
+  background: #111;
+  color: #00ffff;
+  transition: all 0.3s ease;
+}
+
+#search-input::placeholder {
+  color: #00ffffa0;
+}
+
+#search-input:focus {
+  box-shadow: 0 0 30px #00ffffcc;
+}
+
+/* Mic button */
+#mic-btn {
+  background: #111;
+  border: none;
+  font-size: 1.8rem;
+  padding: 12px 15px;
+  border-radius: 50%;
+  color: #00ffff;
+  cursor: pointer;
+  box-shadow: 0 0 15px #00ffff60;
+  transition: transform 0.3s ease;
+}
+
+#mic-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Shortcuts container */
+#shortcuts {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.shortcut {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #00ffff;
+  transition: color 0.3s ease;
+  user-select: none;
+}
+
+.shortcut img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 8px;
+  filter: drop-shadow(0 0 2px #00ffff);
+  border-radius: 12px;
+}
+
+.shortcut.github img {
+  filter: drop-shadow(0 0 5px #00ffff) brightness(1.4);
+}
+
+.shortcut:hover {
+  color: #40ffff;
+}
+
+.shortcut:hover img {
+  filter: drop-shadow(0 0 10px #40ffff) brightness(1.5);
+}
+
+/* Dark mode toggle */
+#dark-mode-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #111;
+  border: none;
+  padding: 12px 16px;
+  border-radius: 30px;
+  color: #00ffff;
+  cursor: pointer;
+  font-size: 1.4rem;
+  box-shadow: 0 0 15px #00ffff90;
+  transition: background-color 0.3s ease;
+}
+
+#dark-mode-toggle:hover {
+  background-color: #00ffff;
+  color: #000;
+}
+
+/* Dark mode overrides */
+body.dark {
+  background: #000;
+  color: #0ff;
+}
+
+body.dark #galaxy-background {
+  background: url('https://cdn.pixabay.com/photo/2016/11/29/03/53/atom-1869716_1280.png') center/contain no-repeat,
+              radial-gradient(circle, #001020 0%, #000000 90%);
+}
+
+body.dark #search-input {
+  background: #222;
+  color: #0ff;
+  box-shadow: 0 0 20px #0ff;
+}
+
+body.dark .shortcut {
+  color: #0ff;
+}
+
+body.dark .shortcut:hover {
+  color: #80ffff;
+}
+
+body.dark #mic-btn {
+  background: #222;
+  color: #0ff;
+  box-shadow: 0 0 15px #0ff;
+}
+
+#star-orbits {
+  position: absolute;
+  inset: 0;
+  pointer-events: none; /* so stars don't interfere with clicks */
+}
+
+.star {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: #0ff;
+  border-radius: 50%;
+  box-shadow: 0 0 6px 2px #0ff;
+  top: 50%;
+  left: 50%;
+  transform-origin: 0 0;
+  will-change: transform;
+  opacity: 0.8;
+}
+#galaxy-background {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    url('https://cdn.pixabay.com/photo/2016/11/29/03/53/atom-1869716_1280.png') center/contain no-repeat,
+    radial-gradient(circle, #001020 0%, #000000 80%);
+}
+
+/* planets and stars CSS from before */
+
