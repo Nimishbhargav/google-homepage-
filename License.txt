@@ -1,0 +1,13 @@
+Proprietary License
+
+Copyright (c) 2025 Nimish Bhargav
+
+All rights reserved.
+
+This software and associated files are the exclusive property of Nimish Bhargav.
+
+Permission is NOT granted to copy, modify, merge, publish, distribute, sublicense, or sell copies of this software, either in whole or in part, without explicit written permission from the author.
+
+Any unauthorized use of this code is a violation of copyright and will be subject to legal action.
+
+Contact: nimishbhargav.dev@gmail.com
